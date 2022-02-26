@@ -10,7 +10,6 @@ import DashboardApp from './pages/DashboardApp';
 // import Blog from './pages/Blog';
 import CovidPositive from './pages/CovidPositive';
 import CovidDeath from './pages/CovidDeath';
-import Product from './pages/Products';
 import NotFound from './pages/Page404';
 
 // ----------------------------------------------------------------------
@@ -24,7 +23,6 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'covid-positive', element: <CovidPositive /> },
         { path: 'covid-deaths', element: <CovidDeath /> },
-        { path: 'product', element: <Product /> }
       ]
     },
     {
