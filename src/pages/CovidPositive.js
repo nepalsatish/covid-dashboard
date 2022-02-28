@@ -27,8 +27,10 @@ import {
   UserListToolbar,
   UserMoreMenu,
 } from '../sections/@dashboard/patient';
+import { useSelector, useDispatch } from 'react-redux';
 //
  import COVIDPOSITIVE from '../_mocks_/covidpositive';
+import { setCovidPositive } from 'src/features/covidPositiveSlice';
 
 // ----------------------------------------------------------------------
 
@@ -79,14 +81,16 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function User() {
+export default function CovidPositive() {
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState('asc');
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState('district');
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(30);
-  const [covidPositive, setCovidPositive] = useState([]);
+  // const [covidPositive, setCovidPositive] = useState([]);
+  const dispatch = useDispatch();
+  const covidPositive = useSelector((state) => state.covidPositiveSlice.value);
   //Raw_COVID19RTPCRPositiveDatabase.json
   //api.jsonstorage.net/v1/json/21cbbd27-2a8b-4fe4-ab0d-086108e05ac4/6ec92eaa-9aca-4464-9ceb-71cf44b753b6?apiKey=415319d7-d3ad-4f2a-bd34-bb5bf64d5f93
   // useEffect(() => {
@@ -96,16 +100,17 @@ export default function User() {
   //     )
   //     .then((res) => {
   //       const result = res.data;
-  //       setCovidPositive(Object.keys(result));
+  //       dispatch(result);
   //     })
   //     .catch((err) => {
   //       console.log(err);
   //     });
   // }, [covidPositive]);
+  console.log(covidPositive);
   useEffect(() => {
-    setCovidPositive(COVIDPOSITIVE);
-  }, [covidPositive]);
-  
+    dispatch(setCovidPositive(COVIDPOSITIVE));
+  }, [dispatch]);
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');

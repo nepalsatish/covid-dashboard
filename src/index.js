@@ -9,15 +9,31 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
+//redux
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux'; 
+import filterQuery from './features/filterQuery';
+import covidPositiveSlice from './features/covidPositiveSlice';
+import covidDeathSlice from './features/covidDeathSlice';
 
 // ----------------------------------------------------------------------
+const store = configureStore({
+  reducer: {
+    filterSidebar: filterQuery,
+    covidPositiveSlice: covidPositiveSlice,
+    covidDeathSlice: covidDeathSlice,
+  },
+  middleware: [...getDefaultMiddleware()],
+});
 
 ReactDOM.render(
+  <Provider store={store}>
   <HelmetProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </HelmetProvider>,
+  </HelmetProvider>
+  </Provider>,
   document.getElementById('root')
 );
 

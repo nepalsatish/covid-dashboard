@@ -28,6 +28,8 @@ import {
 } from '../sections/@dashboard/patient';
 //
 import COVIDDEATH from '../_mocks_/coviddeath';
+import{useSelector,useDispatch} from 'react-redux';
+import { setCovidDeath } from '../features/covidDeathSlice';
 
 // ----------------------------------------------------------------------
 
@@ -77,7 +79,6 @@ function applySortFilter(array, comparator, query) {
         _patient.province.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
         _patient.district.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
         _patient.casenum.toLowerCase().indexOf(query.toLowerCase()) !== -1 
-        || _patient.date.toLowerCase().indexOf(query.toLowerCase()) !== -1
         || _patient.date_death.toLowerCase().indexOf(query.toLowerCase()) !== -1
         || _patient.date_positive.toLowerCase().indexOf(query.toLowerCase()) !== -1
         || _patient.address.toLowerCase().indexOf(query.toLowerCase()) !== -1
@@ -87,19 +88,19 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function User() {
+export default function CovidDeath() {
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState('asc');
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState('district');
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(30);
-  const [covidDeathData, setCovidDeathData] = useState([]);
+  const dispatch = useDispatch();
+  const covidDeathData = useSelector((state) => state.covidDeathSlice.value);
 
   useEffect(() => {
-    setCovidDeathData(COVIDDEATH);
-  }, []);
-console.log(covidDeathData)
+    dispatch(setCovidDeath(COVIDDEATH));
+  }, [dispatch]);
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');

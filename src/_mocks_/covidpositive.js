@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { sample } from 'lodash';
+import {fDate} from '../utils/formatTime';
 
 // ----------------------------------------------------------------------
 
@@ -8,19 +9,18 @@ const covidPositive = [...Array(110)].map((_, index) => ({
     min: 55555,
     max: 99999999,
   }).toString(),
-  // date: faker.date.between('2020-01-01', '2021-12-30'),
-  date: '2020-01-01',
+   date: fDate(faker.date.between('2020-01-01', '2021-12-30')),
   age: faker.datatype.number({
     min: 1,
     max: 80,
   }),
   sex: sample(['Male', 'Female']),
   province: sample([
-    'Province 1',
+    'Province1',
     'Madhesh',
     'Bagmati',
     'Gandaki',
-    'Province 5',
+    'Province5',
     'Karnali',
     'Sudurpaschim',
   ]),

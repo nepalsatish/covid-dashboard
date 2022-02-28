@@ -5,7 +5,11 @@ import Page from '../components/Page';
 import {
   CovidDeaths,
   NewCovidPositive,
-  CovidRecovered} from '../sections/@dashboard/app';
+  CovidRecovered,
+  DataLocationPositive,
+  DataLocationDeath,
+  TotalDataChart,
+} from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
 
@@ -25,6 +29,19 @@ export default function DashboardApp() {
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <CovidDeaths />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={6}>
+            <DataLocationPositive />
+          </Grid>
+          <Grid item xs={12} sm={12} md={6}>
+            <DataLocationDeath />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <TotalDataChart />
           </Grid>
         </Grid>
       </Container>

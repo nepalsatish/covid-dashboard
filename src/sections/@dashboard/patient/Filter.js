@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Form, FormikProvider } from 'formik';
+import { useSelector, useDispatch } from 'react-redux';
 // material
 import {
   Box,
@@ -13,22 +14,23 @@ import {
   Select,
   InputLabel,
   FormControl,
-  TextField,
   OutlinedInput,
+  TextField,
 } from '@mui/material';
+import { DatePicker, LocalizationProvider } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 //
 import Iconify from '../../../components/Iconify';
 import Scrollbar from '../../../components/Scrollbar';
-import { DatePicker, LocalizationProvider } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import { setQuery, resetQuery } from '../../../features/filterQuery';
 // ----------------------------------------------------------------------
 
-export const SORT_BY_OPTIONS = [
-  { value: 'featured', label: 'Featured' },
-  { value: 'newest', label: 'Newest' },
-  { value: 'priceDesc', label: 'Price: High-Low' },
-  { value: 'priceAsc', label: 'Price: Low-High' },
-];
+// export const SORT_BY_OPTIONS = [
+//   { value: 'featured', label: 'Featured' },
+//   { value: 'newest', label: 'Newest' },
+//   { value: 'priceDesc', label: 'Price: High-Low' },
+//   { value: 'priceAsc', label: 'Price: Low-High' },
+// ];
 export const FILTER_PROVINCE_OPTIONS = [
   'Province 1',
   'Madhesh',
@@ -117,7 +119,7 @@ export const FILTER_DISTRICT_OPTIONS = [
 ];
 // ----------------------------------------------------------------------
 
-ShopFilterSidebar.propTypes = {
+FilterSidebar.propTypes = {
   isOpenFilter: PropTypes.bool,
   onResetFilter: PropTypes.func,
   onOpenFilter: PropTypes.func,
@@ -125,7 +127,7 @@ ShopFilterSidebar.propTypes = {
   formik: PropTypes.object,
 };
 
-export default function ShopFilterSidebar({
+export default function FilterSidebar({
   isOpenFilter,
   onResetFilter,
   onOpenFilter,
@@ -133,6 +135,13 @@ export default function ShopFilterSidebar({
   formik,
 }) {
   const { values, getFieldProps, handleChange } = formik;
+  const dispatch = useDispatch();
+  const query = useSelector((state) => state.filterSidebar.query); // query from redux store
+  const formatDate = (date) => {
+    var d = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(
+      -2
+    )}-${('0' + date.getDate()).slice(-2)}`;
+    formik.setFieldValue('date', d);}
   return (
     <>
       <Button
@@ -215,18 +224,19 @@ export default function ShopFilterSidebar({
                 <div>
                   <Box sx={{ minWidth: 120 }}>
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <div>
-                      <DatePicker
-                        label="Date"
-                        {...getFieldProps('date')}
-                        value={values.date}
-                        onChange={(value) =>
-                          formik.setFieldValue('date', value)
-                        }
-                        renderInput={(params) => <TextField {...params} />}
-                      /></div>
+                      <div>
+                        <DatePicker
+                          label="Date"
+                          {...getFieldProps('date')}
+                          value={values.date}
+                          onChange={(value) =>{
+                            formatDate(value);
+                          }
+                          }
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                      </div>
                     </LocalizationProvider>
-                    
                   </Box>
                 </div>
                 <div>
@@ -245,20 +255,24 @@ export default function ShopFilterSidebar({
                 type="submit"
                 color="success"
                 variant="outlined"
-                onClick={formik.handleSubmit}
+                onClick={() => {
+                  dispatch(setQuery({ ...query, ...formik.values }));
+                }}
               >
                 Submit
               </Button>
             </Box>
 
-            <Box sx={{ p : 1 }}>
+            <Box sx={{ p: 1 }}>
               <Button
                 fullWidth
                 size="large"
                 type="submit"
                 color="inherit"
                 variant="outlined"
-                onClick={onResetFilter}
+                onClick={() => {
+                  dispatch(resetQuery());
+                }}
                 startIcon={<Iconify icon="ic:round-clear-all" />}
               >
                 Clear
