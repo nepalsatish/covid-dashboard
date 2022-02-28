@@ -6,3 +6,6 @@ export { default as DataLocationPositive } from './DataLocationPositive';
 export { default as DataLocationDeath } from './DataLocationDeath';
 export { default as NewCovidPositive } from './NewCovidPositive';
 export { default as TotalDataChart } from './TotalDataChart';
+export { default as AppOrderTimeline } from './AppOrderTimeline';
+//export { default as AppTasks } from './AppTasks';
+export { default as CovidPositiveBar} from './CovidPositiveBar';
