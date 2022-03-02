@@ -41,7 +41,7 @@ export default function AppBugReports() {
 
   useEffect(() => {
     setCovidDeathNumber(COVIDDEATHS.length)
-  }, [COVIDDEATHS])
+  }, [])
 
   return (
     <RootStyle>

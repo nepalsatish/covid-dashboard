@@ -16,7 +16,7 @@ const covidPositive = [...Array(110)].map((_, index) => ({
   }),
   sex: sample(['Male', 'Female']),
   province: sample([
-    'Province-1',
+    'Province1',
     'Madhesh',
     'Bagmati',
     'Gandaki',

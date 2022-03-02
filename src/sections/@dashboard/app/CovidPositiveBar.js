@@ -37,7 +37,7 @@ export default function CovidPositiveBar() {
         'Madhesh',
         'Bagmati',
         'Gandaki',
-        'Province 5',
+        'Lumbini',
         'Karnali',
         'Sudurpaschim',
       ],

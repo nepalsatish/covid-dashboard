@@ -42,7 +42,7 @@ const CHART_DATA = [
   AllProvinceOccuranceCount.Karnali,
   AllProvinceOccuranceCount.Madhesh,
   AllProvinceOccuranceCount.Province1,
-  AllProvinceOccuranceCount.Province5,
+  AllProvinceOccuranceCount.Lumbini,
   AllProvinceOccuranceCount.Sudurpaschim
 
 ];
@@ -64,7 +64,7 @@ export default function DataLocationDeath() {
       'Madhesh',
       'Bagmati',
       'Gandaki',
-      'Province 5',
+      'Lumbini',
       'Karnali',
       'Sudurpaschim',
     ],
