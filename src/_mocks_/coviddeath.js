@@ -22,11 +22,11 @@ const covidDeath = [...Array(110)].map((_, index) => ({
   }),
   sex: sample(['Male', 'Female']),
   province: sample([
-    'Province1',
+    'Province-1',
     'Madhesh',
     'Bagmati',
     'Gandaki',
-    'Province5',
+    'Lumbini',
     'Karnali',
     'Sudurpaschim',
   ]),
