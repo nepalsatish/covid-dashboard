@@ -142,6 +142,10 @@ export default function FilterSidebar({
       -2
     )}-${('0' + date.getDate()).slice(-2)}`;
     formik.setFieldValue('date', d);}
+    const resetForm = () => {
+      formik.resetForm();
+      dispatch(resetQuery());
+    };
   return (
     <>
       <Button
@@ -229,10 +233,9 @@ export default function FilterSidebar({
                           label="Date"
                           {...getFieldProps('date')}
                           value={values.date}
-                          onChange={(value) =>{
+                          onChange={(value) => {
                             formatDate(value);
-                          }
-                          }
+                          }}
                           renderInput={(params) => <TextField {...params} />}
                         />
                       </div>
@@ -270,9 +273,7 @@ export default function FilterSidebar({
                 type="submit"
                 color="inherit"
                 variant="outlined"
-                onClick={() => {
-                  dispatch(resetQuery());
-                }}
+                onClick={resetForm}
                 startIcon={<Iconify icon="ic:round-clear-all" />}
               >
                 Clear
