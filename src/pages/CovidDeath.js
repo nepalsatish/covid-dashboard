@@ -101,6 +101,7 @@ export default function CovidDeath() {
   useEffect(() => {
     dispatch(setCovidDeath(COVIDDEATH));
   }, [dispatch]);
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');

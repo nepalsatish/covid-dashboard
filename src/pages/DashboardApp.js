@@ -10,6 +10,15 @@ import {
   DataLocationDeath,
   TotalDataChart,
   CovidPositiveBar,
+  CovidNewCases,
+  DistrictsReportingNewCases,
+  NumberofActiveCase,
+  RollingDaysTotal,
+  DailyTestsAndPositivityRate,
+  DailyPositiveCases,
+  DailyNewPositiveAndRecoveredCases,
+  WeeklyTestPositiveCases,
+  EstimatedAndReported,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -22,20 +31,24 @@ export default function DashboardApp() {
           <Typography variant="h4">Hi, Welcome back</Typography>
         </Box>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          <Grid item xs={12} sm={12} md={6} lg={12} xl={12}>
             <Grid container spacing={3}>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={6} sm={2} md={2}>
                 <CovidRecovered />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={6} sm={2} md={2}>
                 <NewCovidPositive />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={6} sm={2} md={2}>
                 <CovidDeaths />
               </Grid>
+              <Grid item xs={6} sm={2} md={2}></Grid>
+              <Grid item xs={6} sm={2} md={2}></Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
             <DataLocationDeath />
           </Grid>
         </Grid>
@@ -46,7 +59,24 @@ export default function DashboardApp() {
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
-            <TotalDataChart />
+            <CovidNewCases />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <DistrictsReportingNewCases />
+            {/* <TotalDataChart /> */}
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <NumberofActiveCase />
+            <RollingDaysTotal />
+            <DailyTestsAndPositivityRate />
+            <DailyPositiveCases/>
+            <DailyNewPositiveAndRecoveredCases/>
+            <WeeklyTestPositiveCases/>
+            <EstimatedAndReported/>
           </Grid>
         </Grid>
       </Container>

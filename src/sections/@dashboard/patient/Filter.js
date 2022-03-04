@@ -245,7 +245,13 @@ export default function FilterSidebar({
                 <div>
                   <Box sx={{ minWidth: 120 }}>
                     <FormControl fullWidth>
-                      <OutlinedInput placeholder="Age" />
+                      <OutlinedInput
+                      type="number"
+                        placeholder="Age"
+                        {...getFieldProps('age')}
+                        value={values.age}
+                        onChange={handleChange}
+                      />
                     </FormControl>
                   </Box>
                 </div>

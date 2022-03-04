@@ -70,7 +70,11 @@ export default function DataLocationDeath() {
     ],
     stroke: { colors: [theme.palette.background.paper] },
     legend: { floating: true, horizontalAlign: 'center' },
-    dataLabels: { enabled: true, dropShadow: { enabled: false } },
+    dataLabels: {
+      enabled: true,
+      dropShadow: { enabled: false },
+      style: { colors: ['#000'] },
+    },
     tooltip: {
       fillSeriesColor: false,
       y: {

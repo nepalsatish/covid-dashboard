@@ -11,10 +11,19 @@ import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 //redux
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { Provider } from 'react-redux'; 
+import { Provider } from 'react-redux';
 import filterQuery from './features/filterQuery';
 import covidPositiveSlice from './features/covidPositiveSlice';
 import covidDeathSlice from './features/covidDeathSlice';
+import covidNewCasesSlice from './features/CovidNewCasesSlice';
+import DistrictsNewCases from './features/DistrictsNewCases';
+import NumberOfActiveCase from './features/NumberofActiveCase';
+import Rolling7daysSlice from './features/Rolling7daysSlice';
+import DailyTestsAndPositivitySlice from './features/DailyTestsAndPositivitySlice';
+import DailyPositiveCasesSlice from './features/DailyPositiveCasesSlice';
+import DailyNewAndRecoveredSlice from './features/DailyNewAndRecoveredSlice';
+import WeeklyTestPositiveCases from './features/WeeklyTestPositiveCases';
+import EstimatedAndReported from './features/EstimatedAndReported';
 
 // ----------------------------------------------------------------------
 const store = configureStore({
@@ -22,17 +31,26 @@ const store = configureStore({
     filterSidebar: filterQuery,
     covidPositiveSlice: covidPositiveSlice,
     covidDeathSlice: covidDeathSlice,
+    covidNewCasesSlice: covidNewCasesSlice,
+    DistrictsNewCases: DistrictsNewCases,
+    NumberOfActiveCase: NumberOfActiveCase,
+    Rolling7daysSlice: Rolling7daysSlice,
+    DailyTestsAndPositivitySlice: DailyTestsAndPositivitySlice,
+    DailyPositiveCasesSlice: DailyPositiveCasesSlice,
+    DailyNewAndRecoveredSlice:DailyNewAndRecoveredSlice,
+    WeeklyTestPositiveCases:WeeklyTestPositiveCases,
+    EstimatedAndReported:EstimatedAndReported
   },
   middleware: [...getDefaultMiddleware()],
 });
 
 ReactDOM.render(
   <Provider store={store}>
-  <HelmetProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </HelmetProvider>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </Provider>,
   document.getElementById('root')
 );

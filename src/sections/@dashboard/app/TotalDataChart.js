@@ -25,9 +25,9 @@ const CHART_DATA = [
   }
 ];
 
-export default function TotalDataChart() {
+export default function TotalDataChart() { 
   const chartOptions = merge(BaseOptionChart(), {
-    stroke: { width: [0, 2, 3] },
+    stroke: { width: [0, 4, 3] },
     plotOptions: { bar: { columnWidth: '11%', borderRadius: 4 } },
     fill: { type: ['solid', 'gradient', 'solid'] },
     labels: [
@@ -47,7 +47,7 @@ export default function TotalDataChart() {
       '02/01/2021',
       '03/01/2021',
     ],
-    xaxis: { type: 'datetime' },
+    xaxis: { type: 'category', labels: { rotate: -90} },
     tooltip: {
       shared: true,
       intersect: false,

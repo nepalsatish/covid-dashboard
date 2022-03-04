@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialStateValue = { province: '', district: '', date:'' };
+const initialStateValue = { province: '', district: '', date:'', age:'' };
 
 export const filterQuery = createSlice({
   name: 'filterQuery',

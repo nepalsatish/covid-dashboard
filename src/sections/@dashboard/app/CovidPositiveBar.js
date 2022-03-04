@@ -63,7 +63,7 @@ export default function CovidPositiveBar() {
 
   return (
     <Card>
-      <CardHeader title="Covid Positve Bar" subheader="" />
+      <CardHeader title="COVID-19 Positive Cases (PCR+ Antigen)" subheader="by Province" />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart
           type="bar"

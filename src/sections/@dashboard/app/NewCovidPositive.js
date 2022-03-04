@@ -44,7 +44,7 @@ export default function AppItemOrders() {
 
   useEffect(() => {
     setNewPositiveNumber(COVIDPOSITIVE.length);
-  }, [COVIDPOSITIVE]);
+  }, []);
 
   return (
     <RootStyle>
