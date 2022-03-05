@@ -25,7 +25,7 @@ import DailyNewAndRecoveredSlice from './features/DailyNewAndRecoveredSlice';
 import WeeklyTestPositiveCases from './features/WeeklyTestPositiveCases';
 import EstimatedAndReported from './features/EstimatedAndReported';
 
-// ----------------------------------------------------------------------
+// --------------------------------------------j--------------------------
 const store = configureStore({
   reducer: {
     filterSidebar: filterQuery,

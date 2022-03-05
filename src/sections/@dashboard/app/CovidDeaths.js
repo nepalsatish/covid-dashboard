@@ -46,11 +46,11 @@ export default function AppBugReports() {
   return (
     <RootStyle>
       <IconWrapperStyle>
-        <Iconify icon="ant-design:bug-filled" width={24} height={24} />
+        <Iconify icon="cil:face-dead" width={24} height={24} />
       </IconWrapperStyle>
-      <Typography variant="h3">{fShortenNumber(covidDeathNumber)}</Typography>
+      <Typography variant="h4">{fShortenNumber(covidDeathNumber)}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Patients Died
+        Total Patients Deaths
       </Typography>
     </RootStyle>
   );

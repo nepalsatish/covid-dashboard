@@ -19,6 +19,8 @@ import {
   DailyNewPositiveAndRecoveredCases,
   WeeklyTestPositiveCases,
   EstimatedAndReported,
+  NewCasesCard,
+  NewActiveCasesCard,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -42,8 +44,12 @@ export default function DashboardApp() {
               <Grid item xs={6} sm={2} md={2}>
                 <CovidDeaths />
               </Grid>
-              <Grid item xs={6} sm={2} md={2}></Grid>
-              <Grid item xs={6} sm={2} md={2}></Grid>
+              <Grid item xs={6} sm={2} md={2}>
+                <NewCasesCard />
+              </Grid>
+              <Grid item xs={6} sm={2} md={2}>
+                <NewActiveCasesCard />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -73,10 +79,10 @@ export default function DashboardApp() {
             <NumberofActiveCase />
             <RollingDaysTotal />
             <DailyTestsAndPositivityRate />
-            <DailyPositiveCases/>
-            <DailyNewPositiveAndRecoveredCases/>
-            <WeeklyTestPositiveCases/>
-            <EstimatedAndReported/>
+            <DailyPositiveCases />
+            <DailyNewPositiveAndRecoveredCases />
+            <WeeklyTestPositiveCases />
+            <EstimatedAndReported />
           </Grid>
         </Grid>
       </Container>

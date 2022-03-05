@@ -18,3 +18,5 @@ export { default as DailyPositiveCases } from './DailyPositiveCases';
 export { default as DailyNewPositiveAndRecoveredCases } from './DailyNewPositiveAndRecoveredCases';
 export {default as WeeklyTestPositiveCases} from './WeeklyTestPositiveCases';
 export { default as EstimatedAndReported } from './EstimatedAndReported';
+export { default as NewCasesCard } from './NewCasesCard';
+export {default as NewActiveCasesCard } from './NewActiveCasesCard';

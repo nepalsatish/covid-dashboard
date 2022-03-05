@@ -1,9 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialStateValue = [
-  { name: 'New Positive', type: 'line', data: [] },
-  { name: 'New Recoveries', type: 'line', data: [] },
-];
+const initialStateValue = [];
 
 export const DailyNewAndRecoveredSlice = createSlice({
   name: 'DailyNewAndRecoveredSlice',
