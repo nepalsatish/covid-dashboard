@@ -50,7 +50,7 @@ export default function AppBugReports() {
       </IconWrapperStyle>
       <Typography variant="h4">{fShortenNumber(covidDeathNumber)}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Total Patients Deaths
+        Total Patients <br/> Deaths
       </Typography>
     </RootStyle>
   );

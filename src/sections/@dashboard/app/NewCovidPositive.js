@@ -57,7 +57,7 @@ export default function AppItemOrders() {
       </IconWrapperStyle>
       <Typography variant="h4">{fShortenNumber(newPositiveNumber)}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Total Patients Infected
+        Total Patients <br/> Infected
       </Typography>
     </RootStyle>
   );
