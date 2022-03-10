@@ -17,13 +17,17 @@ const CHART_DATA = [
 
 export default function CovidPositiveBar() {
   const chartOptions = merge(BaseOptionChart(), {
+    chart: {
+      toolbar: {
+        show: true,
+      },
+    },
+    colors: ['#4a3232'],
     stroke: { width: [0, 2, 3] },
     plotOptions: { bar: { columnWidth: '40%', borderRadius: 2 } },
     fill: {
-      colors: '#2d0707',
-      type: 'gradient',
+      type: 'solid',
       gradient: {
-        shade: 'dark',
         type: 'vertical',
         shadeIntensity: 0.5,
         opacityFrom: 0.9,
@@ -48,7 +52,7 @@ export default function CovidPositiveBar() {
       fillSeriesColor: false,
       followCursor: true,
       marker: {
-        show: false,
+        show: true,
       },
       y: {
         formatter: (y) => {

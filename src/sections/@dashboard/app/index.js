@@ -20,3 +20,4 @@ export {default as WeeklyTestPositiveCases} from './WeeklyTestPositiveCases';
 export { default as EstimatedAndReported } from './EstimatedAndReported';
 export { default as NewCasesCard } from './NewCasesCard';
 export {default as NewActiveCasesCard } from './NewActiveCasesCard';
+export { default as PredictiveValues} from './PredictiveValues';

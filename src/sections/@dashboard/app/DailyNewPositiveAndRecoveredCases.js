@@ -282,7 +282,17 @@ export default function DailyNewPositiveAndRecoveredCases() {
         },
       },
     },
-    chart: { type: 'line', zoom: { enabled: true } },
+    chart: {
+      type: 'line',
+      zoom: {
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+      },
+      toolbar: {
+        show: true,
+      },
+    },
     stroke: { width: [4, 4], curve: 'smooth' },
 
     fill: { type: ['solid', 'solid'] },
@@ -293,7 +303,7 @@ export default function DailyNewPositiveAndRecoveredCases() {
       },
       labels: {
         rotate: -90,
-      }
+      },
     },
     markers: { size: [3, 3], colors: ['#000'], fillOpacity: 1, strokeWidth: 1 },
     dataLabels: {

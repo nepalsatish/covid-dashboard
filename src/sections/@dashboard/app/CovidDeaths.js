@@ -48,9 +48,10 @@ export default function AppBugReports() {
       <IconWrapperStyle>
         <Iconify icon="cil:face-dead" width={24} height={24} />
       </IconWrapperStyle>
-      <Typography variant="h4">{fShortenNumber(covidDeathNumber)}</Typography>
+      <Typography variant="h4">{covidDeathNumber}</Typography>
+      {/* <Typography variant="h4">{fShortenNumber(covidDeathNumber)}</Typography> */}
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Total Patients <br/> Deaths
+        Total Patients <br /> Deaths
       </Typography>
     </RootStyle>
   );

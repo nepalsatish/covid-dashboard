@@ -393,6 +393,17 @@ const CHART_DATA = [
 
 export default function WeeklyTestPositiveCases() {
   const chartOptions = merge(BaseOptionChart(), {
+    chart: {
+      type: 'bar',
+      zoom: {
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+      },
+      toolbar: {
+        show: true,
+      },
+    },
     colors: ['#0088FE', '#FFBB28', '#FF8042'],
     stroke: { width: [0, 4, 4] },
     plotOptions: {

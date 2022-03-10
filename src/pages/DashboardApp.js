@@ -21,6 +21,7 @@ import {
   EstimatedAndReported,
   NewCasesCard,
   NewActiveCasesCard,
+  PredictiveValues,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -30,7 +31,9 @@ export default function DashboardApp() {
     <Page title="Dashboard |Covid Nepal">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Hi, Welcome back</Typography>
+          <Typography variant="h4">
+            Hi, Welcome back to COVID19 status of Nepal
+          </Typography>
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={12}>
@@ -55,16 +58,6 @@ export default function DashboardApp() {
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
-            <DataLocationDeath />
-          </Grid>
-        </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12}>
-            <CovidPositiveBar />
-          </Grid>
-        </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12}>
             <CovidNewCases />
           </Grid>
         </Grid>
@@ -83,6 +76,22 @@ export default function DashboardApp() {
             <DailyNewPositiveAndRecoveredCases />
             <WeeklyTestPositiveCases />
             <EstimatedAndReported />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <CovidPositiveBar />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <PredictiveValues />
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <DataLocationDeath />
           </Grid>
         </Grid>
       </Container>
