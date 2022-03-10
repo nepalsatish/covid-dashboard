@@ -520,7 +520,7 @@ const CHART_DATA = [
 
 export default function RollingDaysTotal() {
   const chartOptions = merge(BaseOptionChart(), {
-    colors: ['#fc5203', '#fc1403', '#0362fc', '#0a8028'],
+    colors: ['#fc5203', '#ad61c2', '#0362fc', '#0a8028'],
     plotOptions: {
       // Bar
       bar: {
