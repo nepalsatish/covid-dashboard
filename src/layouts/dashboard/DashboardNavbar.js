@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // material
 import { alpha, styled } from '@mui/material/styles';
 import { Box, Stack, AppBar, Toolbar, IconButton, Divider, FormControl, InputLabel, Select, MenuItem, TextField, Button, OutlinedInput, ListItemText, Checkbox } from '@mui/material';
-import { Form, FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik, FieldArray } from 'formik';
 // components
 import Iconify from '../../components/Iconify';
 //
@@ -23,7 +23,7 @@ export const FILTER_PROVINCE_OPTIONS = [
   'Madhesh',
   'Bagmati',
   'Gandaki',
-  'Province 5',
+  'Lumbini',
   'Karnali',
   'Sudurpaschim',
 ];
@@ -68,17 +68,18 @@ export default function DashboardNavbar({ onOpenSidebar }) {
   const formik = useFormik({
     initialValues: {
       date:'',
-      province: [''],  
+      province:[],  
   },
-  setFieldValue: (field, value) => {
-    formik.setFieldValue(
-      field,
-      typeof value === 'string' ? value.split(',') : value
-    );
-  },
+  // setFieldValue: (field, value) => {
+  //   formik.setFieldValue(
+  //     field,
+  //     value
+  //   );
+  // },
 });
 
    const { values, getFieldProps, handleChange } = formik;
+   console.log(values);
   
   const formatDate = (date) => {
     var d = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(
@@ -86,6 +87,11 @@ export default function DashboardNavbar({ onOpenSidebar }) {
     )}-${('0' + date.getDate()).slice(-2)}`;
     formik.setFieldValue('date', d);
   };
+
+  const selectedProvinces = (value) => {
+    let selected = typeof value === 'string' ? value.split(',') : value;
+    formik.setFieldValue('province', selected);
+  }                         
 
   return (
     <RootStyle>
@@ -117,7 +123,7 @@ export default function DashboardNavbar({ onOpenSidebar }) {
                         onChange={handleChange}
                         multiple
                         input={<OutlinedInput label="Province" />}
-                        renderValue={(selected) => selected.join(', ')}
+                        renderValue={(selected) => selected.slice().join(', ')}
                         MenuProps={MenuProps}
                       >
                         {FILTER_PROVINCE_OPTIONS.map((item) => (

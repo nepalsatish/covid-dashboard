@@ -32,7 +32,7 @@ export default function DashboardApp() {
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
           <Typography variant="h4">
-            Hi, Welcome back to COVID19 status of Nepal
+            COVID19 status of Nepal
           </Typography>
         </Box>
         <Grid container spacing={3}>
