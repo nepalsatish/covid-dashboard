@@ -543,7 +543,7 @@ export default function RollingDaysTotal() {
         show: true,
       },
     },
-    stroke: { width: [3, 0, 3, 3], curve: 'smooth' },
+    stroke: { width: [1, 0, 1, 1], curve: 'smooth' },
 
     fill: { type: ['solid', 'solid'] },
     xaxis: {
@@ -555,7 +555,7 @@ export default function RollingDaysTotal() {
       },
     },
     markers: {
-      size: [3, 3],
+      size: [0, 0],
       colors: ['#fc5203', '#fc1403', '#0362fc', '#0a8028'],
       fillOpacity: 1,
       strokeWidth: 1,

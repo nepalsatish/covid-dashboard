@@ -31,9 +31,7 @@ export default function DashboardApp() {
     <Page title="Dashboard |Covid Nepal">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">
-            COVID19 status of Nepal
-          </Typography>
+          <Typography variant="h4">COVID-19 STATUS OF NEPAL</Typography>
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={12}>

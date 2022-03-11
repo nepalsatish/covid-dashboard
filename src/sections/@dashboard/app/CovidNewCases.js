@@ -158,6 +158,9 @@ export default function CovidNewCases() {
         },
       },
     },
+    yaxis: {
+      showForNullSeries: false,
+    },
   });
 
   return (

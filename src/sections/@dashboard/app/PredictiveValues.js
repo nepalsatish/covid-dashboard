@@ -52,7 +52,7 @@ const CHART_DATA_NEG = [
 
 export default function PredictiveValues() {
   const chartOptionsPos = merge(BaseOptionChart(), {
-    colors: ['#2b40b5', '#62a6a1'],
+    colors: ['#2b40b5', '#e86664'],
     plotOptions: {
       // Bar
       bar: {
@@ -75,7 +75,7 @@ export default function PredictiveValues() {
         show: true,
       },
     },
-    stroke: { width: [1,1], curve: 'smooth' },
+    stroke: { width: [1, 1], curve: 'smooth' },
 
     fill: {
       type: ['solid', 'gradient'],
@@ -85,6 +85,7 @@ export default function PredictiveValues() {
         opacityFrom: 0.9,
         opacityTo: 0.3,
       },
+      colors: undefined,
     },
     xaxis: {
       type: 'numeric',
@@ -95,8 +96,8 @@ export default function PredictiveValues() {
       },
     },
     markers: {
-      size: [3, 1],
-      colors: ['#2b40b5', '#62a6a1'],
+      size: [2, 2],
+      colors: ['#2b40b5', '#e86664'],
       fillOpacity: 1,
       strokeWidth: 1,
       strokeColor: '#fff',
@@ -151,7 +152,7 @@ export default function PredictiveValues() {
     title: { text: 'Positive Predictive Value' },
   });
   const chartOptionsNeg = merge(BaseOptionChart(), {
-    colors: ['#2b40b5', '#c2837e'],
+    colors: ['#2b40b5', '#e86664'],
     plotOptions: {
       // Bar
       bar: {
@@ -174,7 +175,7 @@ export default function PredictiveValues() {
         show: true,
       },
     },
-    stroke: { width: [1,1], curve: 'smooth' },
+    stroke: { width: [1, 1], curve: 'smooth' },
 
     fill: {
       type: ['solid', 'gradient'],
@@ -199,8 +200,8 @@ export default function PredictiveValues() {
       },
     },
     markers: {
-      size: [3,1],
-      colors: ['#2b40b5', '#c2837e'],
+      size: [3, 1],
+      colors: ['#2b40b5', '#e86664'],
       fillOpacity: 1,
       strokeWidth: 0.5,
       strokeColor: '#fff',

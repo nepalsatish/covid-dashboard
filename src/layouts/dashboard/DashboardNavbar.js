@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 // material
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Stack, AppBar, Toolbar, IconButton, Divider, FormControl, InputLabel, Select, MenuItem, TextField, Button, OutlinedInput, ListItemText, Checkbox } from '@mui/material';
-import { Form, FormikProvider, useFormik, FieldArray } from 'formik';
+import { Box, Stack, AppBar, Toolbar, IconButton, FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, ListItemText, Checkbox } from '@mui/material';
+import { Form, FormikProvider, useFormik } from 'formik';
 // components
 import Iconify from '../../components/Iconify';
 //
 import Searchbar from './Searchbar';
 import AccountPopover from './AccountPopover';
 import NotificationsPopover from './NotificationsPopover';
-import Scrollbar from 'src/components/Scrollbar';
+// import Scrollbar from 'src/components/Scrollbar';
 import { DatePicker, LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
@@ -70,28 +70,16 @@ export default function DashboardNavbar({ onOpenSidebar }) {
       date:'',
       province:[],  
   },
-  // setFieldValue: (field, value) => {
-  //   formik.setFieldValue(
-  //     field,
-  //     value
-  //   );
-  // },
 });
 
    const { values, getFieldProps, handleChange } = formik;
-   console.log(values);
   
   const formatDate = (date) => {
     var d = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(
       -2
     )}-${('0' + date.getDate()).slice(-2)}`;
     formik.setFieldValue('date', d);
-  };
-
-  const selectedProvinces = (value) => {
-    let selected = typeof value === 'string' ? value.split(',') : value;
-    formik.setFieldValue('province', selected);
-  }                         
+  };                       
 
   return (
     <RootStyle>
