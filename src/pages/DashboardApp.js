@@ -22,13 +22,17 @@ import {
   NewCasesCard,
   NewActiveCasesCard,
   PredictiveValues,
+  CovidByAge,
+  SexAndAgeComposition,
+  AgeSpecificPrevalence,
+  KTMValleyandOutsideValley,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
   return (
-    <Page title="Dashboard |Covid Nepal">
+    <Page title="Dashboard | Covid Nepal">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
           <Typography variant="h4">COVID-19 STATUS OF NEPAL</Typography>
@@ -84,9 +88,12 @@ export default function DashboardApp() {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
             <PredictiveValues />
+            <CovidByAge/>
+            <SexAndAgeComposition/>
+            <AgeSpecificPrevalence/>
+            <KTMValleyandOutsideValley/>
           </Grid>
         </Grid>
-
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
             <DataLocationDeath />

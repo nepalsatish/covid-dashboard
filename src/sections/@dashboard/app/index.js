@@ -21,3 +21,7 @@ export { default as EstimatedAndReported } from './EstimatedAndReported';
 export { default as NewCasesCard } from './NewCasesCard';
 export {default as NewActiveCasesCard } from './NewActiveCasesCard';
 export { default as PredictiveValues} from './PredictiveValues';
+export { default as CovidByAge } from './CovidByAge';
+export { default as SexAndAgeComposition } from './SexAndAgeComposition';
+export {default as AgeSpecificPrevalence} from './AgeSpecificPrevalence';
+export { default as KTMValleyandOutsideValley} from './KTMValleyandOutsideValley';

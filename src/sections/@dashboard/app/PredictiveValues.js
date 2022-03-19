@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 // material
@@ -113,12 +114,18 @@ export default function PredictiveValues() {
     tooltip: {
       shared: true,
       intersect: false,
+      x: {
+        formatter: function (val) {
+          return val + ' ' + 'Days';
+        },
+      },
       y: {
         formatter: (y) => {
-          if (typeof y !== 'undefined') {
+          if (y <= 1) {
+            return `${y}` + '%';
+          } else {
             return `${y}`;
           }
-          return y;
         },
       },
     },
@@ -200,7 +207,7 @@ export default function PredictiveValues() {
       },
     },
     markers: {
-      size: [3, 1],
+      size: [2, 2],
       colors: ['#2b40b5', '#e86664'],
       fillOpacity: 1,
       strokeWidth: 0.5,
@@ -217,12 +224,18 @@ export default function PredictiveValues() {
     tooltip: {
       shared: true,
       intersect: false,
+      x: {
+        formatter: function (val) {
+          return val + ' ' + 'Days';
+        },
+      },
       y: {
         formatter: (y) => {
-          if (typeof y !== 'undefined') {
+          if (y <= 1) {
+            return `${y}` + '%';
+          } else {
             return `${y}`;
           }
-          return y;
         },
       },
     },
