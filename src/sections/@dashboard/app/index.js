@@ -25,3 +25,5 @@ export { default as CovidByAge } from './CovidByAge';
 export { default as SexAndAgeComposition } from './SexAndAgeComposition';
 export {default as AgeSpecificPrevalence} from './AgeSpecificPrevalence';
 export { default as KTMValleyandOutsideValley} from './KTMValleyandOutsideValley';
+export {default as ActiveRecoveredDeathProvince} from './ActiveRecoveredDeathProvince';
+export {default as SARILines} from './SARILines';

@@ -268,7 +268,7 @@ const CHART_DATA = [
 
 export default function KTMValleyandOutsideValley() {
   const chartOptions = merge(BaseOptionChart(), {
-    colors: ['#4472c4', '#ed7d31'],
+    colors: ['#4472c4', '#ed7d31'], // blue, orange
     plotOptions: {
       // Bar
       bar: {
@@ -300,7 +300,7 @@ export default function KTMValleyandOutsideValley() {
         text: '',
       },
       labels: {
-        rotate: -90,
+        rotate: 0,
       },
     },
     markers: { size: [3, 3], colors: ['#000'], fillOpacity: 1, strokeWidth: 1 },

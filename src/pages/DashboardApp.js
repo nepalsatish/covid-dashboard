@@ -26,6 +26,8 @@ import {
   SexAndAgeComposition,
   AgeSpecificPrevalence,
   KTMValleyandOutsideValley,
+  ActiveRecoveredDeathProvince,
+  SARILines,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -92,6 +94,8 @@ export default function DashboardApp() {
             <SexAndAgeComposition/>
             <AgeSpecificPrevalence/>
             <KTMValleyandOutsideValley/>
+            <ActiveRecoveredDeathProvince/>
+            <SARILines/>
           </Grid>
         </Grid>
         <Grid container spacing={3}>
