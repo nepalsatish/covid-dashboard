@@ -27,3 +27,8 @@ export {default as AgeSpecificPrevalence} from './AgeSpecificPrevalence';
 export { default as KTMValleyandOutsideValley} from './KTMValleyandOutsideValley';
 export {default as ActiveRecoveredDeathProvince} from './ActiveRecoveredDeathProvince';
 export {default as SARILines} from './SARILines';
+export { default as DailyCriticalCases} from './DailyCriticalCases';
+export { default as DeathsBasedOnDate } from './DeathsBasedOnDate';
+export { default as DeathsBasedOnDateofReport } from './DeathsBasedOnDateofReport';
+export { default as RollingDeathsDaysTotal } from './RollingDeathsDaysTotal';
+export { default as DeathsBySexProvince } from './DeathsBySexProvince';

@@ -65,7 +65,7 @@ export default function SARILines() {
       },
     },
     colors: ['#4472c4', '#ed7d31', '#7030a0', '#806000', '#00b050'],
-    stroke: { width: [2, 2, 2, 2] },
+    stroke: { width: [2, 2, 2, 2, 2] },
     plotOptions: {
       bar: {
         columnWidth: '20%',

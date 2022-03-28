@@ -28,6 +28,11 @@ import {
   KTMValleyandOutsideValley,
   ActiveRecoveredDeathProvince,
   SARILines,
+  DailyCriticalCases,
+  DeathsBasedOnDate,
+  DeathsBasedOnDateofReport,
+  RollingDeathsDaysTotal,
+  DeathsBySexProvince,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -90,17 +95,22 @@ export default function DashboardApp() {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
             <PredictiveValues />
-            <CovidByAge/>
-            <SexAndAgeComposition/>
-            <AgeSpecificPrevalence/>
-            <KTMValleyandOutsideValley/>
-            <ActiveRecoveredDeathProvince/>
-            <SARILines/>
+            <CovidByAge />
+            <SexAndAgeComposition />
+            <AgeSpecificPrevalence />
+            <KTMValleyandOutsideValley />
+            <ActiveRecoveredDeathProvince />
+            <SARILines />
+            <DailyCriticalCases />
+            <DeathsBasedOnDate />
+            <DeathsBasedOnDateofReport />
+            <RollingDeathsDaysTotal />
           </Grid>
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
             <DataLocationDeath />
+            <DeathsBySexProvince />
           </Grid>
         </Grid>
       </Container>

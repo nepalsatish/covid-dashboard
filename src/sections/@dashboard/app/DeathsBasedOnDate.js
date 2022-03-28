@@ -5,14 +5,12 @@ import { Card, CardHeader, Box } from '@mui/material';
 //
 import { BaseOptionChart } from '../../../components/charts';
 import { fDateMonth} from '../../../utils/formatTime';
-import { useSelector, useDispatch } from 'react-redux';
-import {setNumberOfActiveCase} from '../../../features/NumberofActiveCase';
-import { useEffect } from 'react';
+
 // ----------------------------------------------------------------------
 
 const chart_data = [
   {
-    name: 'Active Cases',
+    name: 'Deaths',
     data: [
       {
         x: fDateMonth(Date.now() - 1000 * 60 * 60 * 24 * 30),
@@ -137,15 +135,8 @@ const chart_data = [
     ],
   },
 ];
-export default function NumberofActiveCase() {
-  const dispatch = useDispatch();
-  const chartData = useSelector((state) => state.NumberOfActiveCase.value);
-
-  useEffect(() => {
-    dispatch(setNumberOfActiveCase(chart_data));
-  }, [dispatch]);
+export default function DeathsBasedOnDate() {
   
-
   const chartOptions = merge(BaseOptionChart(), {
     chart: {
       height: 400,
@@ -167,7 +158,7 @@ export default function NumberofActiveCase() {
         show: true,
       },
     },
-    colors: ['#77B6aa'],
+    colors: ['#4472c4'],
     dataLabels: {
       enabled: true,
     },
@@ -181,7 +172,12 @@ export default function NumberofActiveCase() {
         opacity: 0.5,
       },
     },
-    markers: { size: [3], colors: ['#77B6aa'], fillOpacity: 1, strokeWidth: 1, strokeColor: '#000' },
+    markers: {
+      size: [0],
+      colors: ['#4472c4'],
+      fillOpacity: 1,
+      strokeWidth: 0,
+    },
     xaxis: {
       type: 'category', // this needed to enable x data labels, 'datetime' is the default, 'category' is used for typed values
       title: {
@@ -194,7 +190,7 @@ export default function NumberofActiveCase() {
     },
     yaxis: {
       title: {
-        text: 'Number of Active Case',
+        text: 'Number of Deaths',
       },
     },
   });
@@ -202,13 +198,13 @@ export default function NumberofActiveCase() {
   return (
     <Card>
       <CardHeader
-        title="Number of Active Case"
-        subheader="(1 January 2022 onwards)(PCR+ Antigen)"
+        title="Number of COVID-19 Deaths based on Date of Death"
+        subheader="(Data revceived from 16 poush 2078 onwards)"
       />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart
           type="line"
-          series={chartData}
+          series={chart_data}
           options={chartOptions}
           height={400}
         />

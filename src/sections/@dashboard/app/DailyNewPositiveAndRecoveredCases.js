@@ -302,7 +302,7 @@ export default function DailyNewPositiveAndRecoveredCases() {
         text: '',
       },
       labels: {
-        rotate: -90,
+        rotate: 0,
       },
     },
     markers: { size: [3, 3], colors: ['#000'], fillOpacity: 1, strokeWidth: 1 },
