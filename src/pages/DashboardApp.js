@@ -33,6 +33,9 @@ import {
   DeathsBasedOnDateofReport,
   RollingDeathsDaysTotal,
   DeathsBySexProvince,
+  DeathsPer100000,
+  AgeSpecificCase,
+  PlaceofDeath,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -111,6 +114,9 @@ export default function DashboardApp() {
           <Grid item xs={12} sm={12} md={12}>
             <DataLocationDeath />
             <DeathsBySexProvince />
+            <DeathsPer100000/>
+            <AgeSpecificCase/>
+            <PlaceofDeath />
           </Grid>
         </Grid>
       </Container>

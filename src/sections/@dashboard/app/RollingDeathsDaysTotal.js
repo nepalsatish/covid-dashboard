@@ -312,7 +312,7 @@ export default function RollingDeathsDaysTotal() {
       y: {
         formatter: (y) => {
           if (typeof y !== 'undefined') {
-            return `${y.toFixed(0)}` + ' Deaths';
+            return `${y.toFixed(0)} Deaths`;
           }
           return y;
         },

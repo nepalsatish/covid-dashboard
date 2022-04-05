@@ -32,3 +32,6 @@ export { default as DeathsBasedOnDate } from './DeathsBasedOnDate';
 export { default as DeathsBasedOnDateofReport } from './DeathsBasedOnDateofReport';
 export { default as RollingDeathsDaysTotal } from './RollingDeathsDaysTotal';
 export { default as DeathsBySexProvince } from './DeathsBySexProvince';
+export { default as DeathsPer100000 } from './DeathsPer1000';
+export { default as AgeSpecificCase } from './AgeSpecificCase';
+export { default as PlaceofDeath} from './PlaceofDeath';

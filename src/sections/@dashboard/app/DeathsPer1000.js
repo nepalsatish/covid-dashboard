@@ -4,22 +4,27 @@ import ReactApexChart from 'react-apexcharts';
 import { Card, CardHeader, Box } from '@mui/material';
 //
 import { BaseOptionChart } from '../../../components/charts';
+
 // ----------------------------------------------------------------------
 
 const CHART_DATA = [
   {
     name: 'Female',
-    data: [41090, 40591, 24383, 7509, 23353, 23544, 36464],
+    data: [0.9, 19.3, 162.6, 26.2],
   },
   {
     name: 'Male',
-    data: [24720, 16434, 6579, 789, 5983, 2154, 5983],
+    data: [0.8, 43.5, 334.8, 53.1],
+  },
+  {
+    name: 'Total',
+    data: [0.8, 30.8, 245.3, 39.3]
   },
 ];
 
-export default function DeathsBySexProvince() {
+export default function DeathsPer100000() {
   const chartOptions = merge(BaseOptionChart(), {
-    colors: ['#4472c4', '#ed7d31'],
+    colors: ['#4472c4', '#ed7d31', '#a5a5a5'],
     chart: {
       type: 'bar',
       height: 430,
@@ -56,31 +61,20 @@ export default function DeathsBySexProvince() {
       intersect: false,
       y: {
         formatter: (y) => {
-          if (typeof y !== 'undefined') {
-            return `${y.toFixed(0)} Deaths`;
-          }
           return y;
         },
       },
     },
     xaxis: {
-      categories: [
-        'Province 1',
-        'Madhesh',
-        'Bagmati',
-        'Gandaki',
-        'Lumbini',
-        'Karnali',
-        'Sudurpashchim',
-      ],
+      categories: ['0-17', '18-59', '60+', 'Total'],
     },
   });
 
   return (
     <Card>
       <CardHeader
-        title="COVID-19 Deaths by Sex and Provinces"
-        subheader="[N=11,938]"
+        title="COVID-19 Deaths per 100000 Population"
+        subheader=""
       />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart
