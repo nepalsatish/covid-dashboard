@@ -24,6 +24,9 @@ export default function EstimatedAndReported() {
     chart: {
       type: 'bar',
       height: 430,
+      toolbar: {
+        show: true,
+      },
     },
     plotOptions: {
       bar: {

@@ -278,7 +278,17 @@ export default function RollingDaysTotal() {
         },
       },
     },
-    chart: { type: 'line', zoom: { enabled: true } },
+    chart: {
+      type: 'line',
+      zoom: {
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+      },
+      toolbar: {
+        show: true,
+      },
+    },
     stroke: { width: [0, 4], curve: 'straight' },
 
     fill: { type: ['solid', 'solid'] },

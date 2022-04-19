@@ -405,7 +405,17 @@ export default function DailyPositiveCases() {
         },
       },
     },
-    chart: { type: 'bar', zoom: { enabled: true } },
+    chart: {
+      type: 'bar',
+      zoom: {
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+      },
+      toolbar: {
+        show: true,
+      },
+    },
     stroke: { width: [0, 3, 3], curve: 'smooth' },
 
     fill: { type: ['solid', 'solid'] },

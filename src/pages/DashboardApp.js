@@ -21,16 +21,31 @@ import {
   EstimatedAndReported,
   NewCasesCard,
   NewActiveCasesCard,
+  PredictiveValues,
+  CovidByAge,
+  SexAndAgeComposition,
+  AgeSpecificPrevalence,
+  KTMValleyandOutsideValley,
+  ActiveRecoveredDeathProvince,
+  SARILines,
+  DailyCriticalCases,
+  DeathsBasedOnDate,
+  DeathsBasedOnDateofReport,
+  RollingDeathsDaysTotal,
+  DeathsBySexProvince,
+  DeathsPer100000,
+  AgeSpecificCase,
+  PlaceofDeath,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
   return (
-    <Page title="Dashboard |Covid Nepal">
+    <Page title="Dashboard | Covid Nepal">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Hi, Welcome back</Typography>
+          <Typography variant="h4">COVID-19 STATUS OF NEPAL</Typography>
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={6} lg={12} xl={12}>
@@ -55,16 +70,6 @@ export default function DashboardApp() {
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
-            <DataLocationDeath />
-          </Grid>
-        </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12}>
-            <CovidPositiveBar />
-          </Grid>
-        </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12}>
             <CovidNewCases />
           </Grid>
         </Grid>
@@ -83,6 +88,35 @@ export default function DashboardApp() {
             <DailyNewPositiveAndRecoveredCases />
             <WeeklyTestPositiveCases />
             <EstimatedAndReported />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <CovidPositiveBar />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <PredictiveValues />
+            <CovidByAge />
+            <SexAndAgeComposition />
+            <AgeSpecificPrevalence />
+            <KTMValleyandOutsideValley />
+            <ActiveRecoveredDeathProvince />
+            <SARILines />
+            <DailyCriticalCases />
+            <DeathsBasedOnDate />
+            <DeathsBasedOnDateofReport />
+            <RollingDeathsDaysTotal />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <DataLocationDeath />
+            <DeathsBySexProvince />
+            <DeathsPer100000/>
+            <AgeSpecificCase/>
+            <PlaceofDeath />
           </Grid>
         </Grid>
       </Container>

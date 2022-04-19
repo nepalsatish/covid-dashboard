@@ -189,7 +189,7 @@ export default function NumberofActiveCase() {
       },
       labels: {
         show: true,
-        rotate: -90,
+        rotate: 0,
       },
     },
     yaxis: {

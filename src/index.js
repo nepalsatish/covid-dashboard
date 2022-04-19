@@ -24,6 +24,8 @@ import DailyPositiveCasesSlice from './features/DailyPositiveCasesSlice';
 import DailyNewAndRecoveredSlice from './features/DailyNewAndRecoveredSlice';
 import WeeklyTestPositiveCases from './features/WeeklyTestPositiveCases';
 import EstimatedAndReported from './features/EstimatedAndReported';
+import CovidByAgeSlice from './features/CovidByAgeSlice';
+import AgeSpecificPrevalenceSlice from './features/AgeSpecificPrevalenceSlice';
 
 // --------------------------------------------j--------------------------
 const store = configureStore({
@@ -37,9 +39,11 @@ const store = configureStore({
     Rolling7daysSlice: Rolling7daysSlice,
     DailyTestsAndPositivitySlice: DailyTestsAndPositivitySlice,
     DailyPositiveCasesSlice: DailyPositiveCasesSlice,
-    DailyNewAndRecoveredSlice:DailyNewAndRecoveredSlice,
-    WeeklyTestPositiveCases:WeeklyTestPositiveCases,
-    EstimatedAndReported:EstimatedAndReported
+    DailyNewAndRecoveredSlice: DailyNewAndRecoveredSlice,
+    WeeklyTestPositiveCases: WeeklyTestPositiveCases,
+    EstimatedAndReported: EstimatedAndReported,
+    CovidByAgeSlice: CovidByAgeSlice,
+    AgeSpecificPrevalenceSlice: AgeSpecificPrevalenceSlice,
   },
   middleware: [...getDefaultMiddleware()],
 });

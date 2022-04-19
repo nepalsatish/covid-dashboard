@@ -124,8 +124,13 @@ export default function DistrictsReportingNewCases() {
         blur: 10,
         opacity: 0.2,
       },
+      zoom: {
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+      },
       toolbar: {
-        show: false,
+        show: true,
       },
     },
     colors: ['#77B6EA', '#545454'],

@@ -42,7 +42,7 @@ export default function CovidRecovered() {
       <IconWrapperStyle>
         <Iconify icon="akar-icons:health" width={24} height={24} />
       </IconWrapperStyle>
-      <Typography variant="h4">{fShortenNumber(TOTAL)}</Typography>
+      <Typography variant="h4">{TOTAL}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
         Total Patients <br/> Recovered
       </Typography>

@@ -17,6 +17,14 @@ export default function CovidNewCases() {
   const chartOptions = merge(BaseOptionChart(), {
     chart: {
       type: 'bar',
+      zoom: {
+        enabled: true,
+        type: 'x',
+        autoScaleYaxis: true,
+      },
+      toolbar: {
+        show: true,
+      },
     },
     stroke: { show: true, width: 1, colors: ['#fff'] },
     plotOptions: {
@@ -149,6 +157,9 @@ export default function CovidNewCases() {
           return y;
         },
       },
+    },
+    yaxis: {
+      showForNullSeries: false,
     },
   });
 

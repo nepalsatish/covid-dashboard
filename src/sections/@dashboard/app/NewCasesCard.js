@@ -59,7 +59,7 @@ export default function NewCasesCard() {
             .map((item, index) => {
               return (
                 <Typography variant="h4" key={index}>
-                  {fShortenNumber(item.y)}
+                  {item.y}
                 </Typography>
               );
             })
