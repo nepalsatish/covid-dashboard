@@ -1,8 +1,8 @@
 // ----------------------------------------------------------------------
 
 const account = {
-  displayName: 'Ruchi Karn',
-  email: 'ruchikrn15@gmail.com',
+  displayName: 'Satish Nepal',
+  email: 'developersatish.js@gmail.com',
   photoURL: '/static/mock-images/avatars/avatar_default.jpg'
 };
 
